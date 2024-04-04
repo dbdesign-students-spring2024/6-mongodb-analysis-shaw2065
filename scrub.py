@@ -42,6 +42,22 @@ def munge(data,deletion, filepath1,filepath2):
         w.writerow([k[i] for i in indexes])
     f2.close()
 
+def removesn(data):
+    headers = list(data[0].keys())
+    for i in headers:
+        for j in range(len(data)):
+            if data[j][i] == "N/A" or data[j][i] == "":
+                data[j][i] = None
+
+def scrub(data, filepath):
+    f = open(filepath, 'w')
+    headers = list(data[0].keys())
+    w = csv.DictWriter(f,fieldnames=headers)
+    w.writeheader()
+    for i in range(len(data)):
+        w.writerow(data[i])
+    f.close()
+
 
 def main():
     data = get_csv_data("data/listings.csv")
@@ -49,6 +65,14 @@ def main():
     unuse = nouse(data)
     
     munge(data,unuse,"data/listings.csv","data/listings_clean.csv")
+
+    data_ = get_csv_data("data/listings_clean.csv")
+
+    removesn(data_)
+
+    scrub(data_, "data/listings_clean.csv")
+
+
     
 if __name__ == "__main__":
     main()

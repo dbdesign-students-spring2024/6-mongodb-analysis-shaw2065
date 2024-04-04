@@ -487,14 +487,128 @@
             }
     
     **insight**
-    
-            Listings by superhosts tend to have exceptionally high review scores,<br>which is the reasons why these hosts are considered as such.
+    Listings by superhosts tend to have exceptionally high review scores, which is the reasons why these hosts are considered as such.
 
-4. find all the unique host_name values (see the docs)
+4. find all the unique host_name values
+    ```
+    db.athens.distinct("host_name")
+    ```
+    **results**
 
-5. find all of the places that have more than 2 beds in a neighborhood of your choice (referred to as either the neighborhood or neighbourhood_group_cleansed fields in the data file), ordered by review_scores_rating descending
+            [
+                '1915 Team',
+                'A',
+                'A. Tony &',
+                'A77',
+                "AIKATERINI'S Place, ATHENS",
+                'Abdelssatar',
+                'Abdo',
+                'Academia BnB',
+                'Achilleas',
+                'Acropolis Magenta',
+                'Acropolis Museum',
+                'Acropolis Suites And Tours',
+                'Ada',
+                'Adam',
+                'Adam & Christina',
+                'Adamantia',
+                'Adelina',
+                'Adelos',
+                'Adi',
+                'Adib',
+                'Adiola',
+                'Adnan',
+                'Adone',
+                'Adonis',
+                'Adrian',
+                'Adriana',
+                'Adrienn',
+                'Advance Helix Development',
+                'Aemilia',
+                'Afrodite',
+                'Afroditi',
+                'Agamemnon',
+                'Agathi',
+                'Ageliki',
+                'Aggeliki',
+                'Aggelos',
+                'Aggie’s',
+                'Agis',
+                'Agni',
+                'Agnieszka',
+                'Ah',
+                'Ahmad',
+                'Aida',
+                'Aikaterini',
+                'Aimei',
+                'Aimilios',
+                'Ainta',
+                'Airio',
+                'Airnite',
+                'Akan',
+                'Akhmet',
+                'Akis',
+                'Akis & Marietta',
+                'Akrivi',
+                'Al.Ke',
+                'Ala',
+                'Alain',
+                'Alberto',
+                'Albi',
+                'Alda',
+                'Alejandro',
+                'Aleksander',
+                'Aleksandra',
+                'Alessandra',
+                'Alessia',
+                'Alex',
+                'Alexa',
+                'Alexander',
+                'Alexandra',
+                'Alexandra L',
+                'Alexandre',
+                'Alexandros',
+                'Alexandros & Valia',
+                'Alexandros-Emmanouil',
+                'Alexi',
+                'Alexia',
+                'Alexios',
+                'Alexis',
+                'Alexis And Anastasia',
+                'Alfiarios',
+                'Alfred',
+                'Aliang',
+                'Aliki',
+                'Alis,Yannis,Mimis',
+                'Alister',
+                'Alix And Georges',
+                'Alkis',
+                'Alkistis',
+                'Alma',
+                'Almi',
+                'Altanay',
+                'Amalia',
+                'Amanda',
+                'Amantin - Panos',
+                'Amelie',
+                'Amid',
+                'Amir',
+                'Ana',
+                'Ana Maria',
+                'Anabel',
+                ... 2473 more items
+            ]
+
+5. find all of the places that have more than 2 beds in Athens, Attika, Greece (referred to as the neighborhood field in the data file, as neighbourhood_group_cleansed contains none in this dataset), ordered by review_scores_rating descending
+    ```
+    db.athens.find({$and:[{beds: {$gte: 2, }},{neighbourhood: 'Athens, Greece'}]}, { _id: 0, name: 1, beds: 1, review_scores_rating: 1, price: 1 }).sort({ review_scores_rating: 1 }).limit(3)
+    db.athens.find({$and:[{beds: {$gte: 2, }},{neighbourhood: 'Athina, Greece'}]})
+    db.athens.find({neighborhood: "Athina, Greece",})
+db.athens.find( { $and: [ { beds: { $gte: 2 } }, { neighbourhood: 'Athina, Greece' } ] } )
+
+    ```
+    **results**
 only show the name, beds, review_scores_rating, and price
-if your data set only has blanks for all the neighborhood-related fields, or only one neighborhood value in all documents, you may pick another field to filter by - include an explanation and justification for this in your report.
 if you run out of memory for this query, try filtering review_scores_rating that aren't empty ($ne); and lastly, if there's still an issue, you can set the beds to match exactly 2.
 
 6. show the number of listings per host
