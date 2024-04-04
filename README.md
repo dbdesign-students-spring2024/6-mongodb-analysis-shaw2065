@@ -665,14 +665,14 @@
 
     **insight**
 
-    Many hosts can only manage one Airbnb listings, while there are a few who are responsible for more than one, or even ten units. These are highly likely to be managed by companies or organizations.
+    Many hosts can only manage one Airbnb listing, while there are a few who are responsible for more than one, or even ten units. These are highly likely to be managed by companies or organizations.
 
 7. find the average review_scores_rating per neighborhood, and only show those that are 4 or above, sorted in descending order of rating 
     - Use the `$group` stage to separate documents into groups based on the `host_id` field..
     - Utilize `$avg` to compute the average rating for each group
     - Next, use `$match` to filter out all documents in groups that have an average rating below 4.
     - Finally, use `$sort` to maintain a descending order of average ratings for each group.
-    
+
     ```
     db.athens.aggregate([{$group: {_id: "$neighbourhood", avgRating: {$avg: "$review_scores_rating"}}},{$match: {avgRating: {$gte: 4}}},{$sort: {avgRating: -1}}])
     ```
