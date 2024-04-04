@@ -32,7 +32,42 @@
 | **665083132669737868** | [https://www.airbnb.com/rooms/665083132669737868](https://www.airbnb.com/rooms/665083132669737868) | 20231225075512 | 2023-12-25 | city scrape | Condo in Athina · 1 bedroom · 1 bed · 1 bath | | | [https://a0.muscache.com/pictures/miso/Hosting-665083132669737868/original/fccbbbb2-0725-4873-a635-3782b78d3e45.jpeg](https://a0.muscache.com/pictures/miso/Hosting-665083132669737868/original/fccbbbb2-0725-4873-a635-3782b78d3e45.jpeg) | 419174410 | [https://www.airbnb.com/users/show/419174410](https://www.airbnb.com/users/show/419174410) | Sylvia | 2021-08-19 | | | N/A | N/A | N/A | f | [https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_small](https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_small) | [https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_x_medium](https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_x_medium) | | 2 | 2 | ['email', 'phone'] | t | t | | ΕΜΠΟΡΙΚΟ ΤΡΙΓΩΝΟ-ΠΛΑΚΑ | | 37.97444 | 23.73195 | Entire condo | Entire home/apt | 2 | | 1 bath | | 1 | [] | $90.00 | 1 | 365 | 1 | 1 | 365 | 365 | 1.0 | 365.0 | | t | 22 | 52 | 75 | 323 | 2023-12-25 | 0 | 0 | 0 | | | | | | | | | | 1658224 | t | 2 | 2 | 0 | 0 | |
 | **24716838** | [https://www.airbnb.com/rooms/24716838](https://www.airbnb.com/rooms/24716838) | 20231225075512 | 2023-12-26 | previous scrape | Rental unit in Athina · ★4.70 · 1 bedroom · 1 bed · 1 bath | | | [https://a0.muscache.com/pictures/54c10409-fb92-4618-8a8f-8558268437b6.jpg](https://a0.muscache.com/pictures/54c10409-fb92-4618-8a8f-8558268437b6.jpg) | 158101640 | [https://www.airbnb.com/users/show/158101640](https://www.airbnb.com/users/show/158101640) | Katerina | 2017-11-09 | Athens, Greece | | N/A | N/A | 0% | f | [https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_small](https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_small) | [https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_x_medium](https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_x_medium) | Ambelokipi | 2 | 2 | ['email', 'phone'] | t | f | | ΑΜΠΕΛΟΚΗΠΟΙ | | 37.99879 | 23.76088 | Entire rental unit | Entire home/apt | 2 | | 1 bath | | 1 | [] | $50.00 | 2 | 40 | 2 | 2 | 40 | 40 | 2.0 | 40.0 | | t | 0 | 0 | 0 | 0 | 2023-12-26 | 40 | 0 | 0 | 2018-08-23 | 2020-02-28 | 4.7 | 4.8 | 4.83 | 4.8 | 4.83 | 4.55 | 4.75 | | f | 1 | 1 | 0 | 0 | 0.61 |
 
-4. Describe any problems that were present in the data and the scrubbing tasks that were necessary to prepare your data set for import - include any scrubbing done in Python, a text editor, or any other tool. Be specific with examples of the problems in the original data and the way in which those were solved. Feel free to show small snippets of relevant code - see the examples of code "syntax highlighting" in the Markdown guide linked above.
+4. In the original dataset, there are five columns that contain no values of any kind: `description`,`neighbourhood_group_cleansed`,`bathrooms`,`bedrooms`, and `calendar_updated`. Due to the dataset's size, it is necessary to remove these completely empty columns to improve data processing efficiency and readability. To achieve this, I first generate a list of indexes corresponding to the empty columns. Then, when writing the new clean CSV file, I skip these columns using the generated list. All scrubbing tasks are done with Python.
+    1. generate a list of indexes corresponding to the empty columns
+    ```python
+    revise = []
+    headers = list(data[0].keys())
+    mark = True
+
+    for i in headers:
+        mark = True
+        for j in range(len(data)):
+            c = data[j][i]
+            if len(str(c)) != 0:
+                mark = False
+        if mark == True:
+            revise.append(headers.index(i))
+    ```
+    2. skip empty columns when writing the new clean CSV file
+    ```python
+    f1 = open(filepath1, 'r')
+    f2 = open(filepath2, 'w')
+
+    headers = list(data[0].keys())
+    indexes = []
+    for i in range(0,len(headers)):
+        if i not in deletion:
+            indexes.append(i)
+    headers_ = []
+    for j in indexes:
+        headers_.append(headers[j])
+
+    r = csv.reader(f1)
+    w = csv.writer(f2)
+    for k in r:
+        w.writerow([k[i] for i in indexes])
+    f2.close()
+    ```
 
 ## Analysis:
 
