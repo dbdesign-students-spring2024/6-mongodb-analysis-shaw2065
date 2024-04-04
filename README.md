@@ -2,7 +2,7 @@
 
 ## Data set details:
 
-1. My data set contains detailed Airbnb listings data specifically from the region of Athens, Attica, Greece. It comes from the website, [Inside Airbnb](https://data.insideairbnb.com/greece/attica/athens/2023-12-25/data/listings.csv.gz).
+1. [My data set](https://data.insideairbnb.com/greece/attica/athens/2023-12-25/data/listings.csv.gz) contains detailed Airbnb listings data specifically from the region of Athens, Attica, Greece. It comes from the website, [Inside Airbnb](https://insideairbnb.com/get-the-data/).
 
 
 2. The original data file was in the format of CSV.
