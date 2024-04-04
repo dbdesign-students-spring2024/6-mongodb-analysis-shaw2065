@@ -7,9 +7,7 @@
 
 2. The original data file was in the format of CSV.
 
-3. Some of the raw data from the original data file
-    <details>
-    <summary>First 20 rows of raw data</summary>
+3. First 20 rows of raw data from the original data file
 
     | **id**| **listing_url** | **scrape_id** | **last_scraped** | **source** | **name** | **description** | **neighborhood_overview** | **picture_url** | **host_id** | **host_url** | **host_name** | **host_since** | **host_location** | **host_about** | **host_response_time** | **host_response_rate** | **host_acceptance_rate** | **host_is_superhost** | **host_thumbnail_url** | **host_picture_url** | **host_neighbourhood** | **host_listings_count** | **host_total_listings_count** | **host_verifications** | **host_has_profile_pic** | **host_identity_verified** | **neighbourhood** | **neighbourhood_cleansed** | **neighbourhood_group_cleansed** | **latitude** | **longitude** | **property_type** | **room_type** | **accommodates** | **bathrooms** | **bathrooms_text** | **bedrooms** | **beds** | **amenities** | **price** | **minimum_nights** | **maximum_nights** | **minimum_minimum_nights** | **maximum_minimum_nights** | **minimum_maximum_nights** | **maximum_maximum_nights** | **minimum_nights_avg_ntm** | **maximum_nights_avg_ntm** | **calendar_updated** | **has_availability** | **availability_30** | **availability_60** | **availability_90** | **availability_365** | **calendar_last_scraped** | **number_of_reviews** | **number_of_reviews_ltm** | **number_of_reviews_l30d** | **first_review** | **last_review** | **review_scores_rating** | **review_scores_accuracy** | **review_scores_cleanliness** | **review_scores_checkin** | **review_scores_communication** | **review_scores_location** | **review_scores_value** | **license** | **instant_bookable** | **calculated_host_listings_count** | **calculated_host_listings_count_entire_homes** | **calculated_host_listings_count_private_rooms** | **calculated_host_listings_count_shared_rooms** | **reviews_per_month** |
     | ----------------------- | ---------------------------------------------------------------------------------------------------- | -------------- | ---------------- | --------------- | ------------------------------------------------------------ | --------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ----------- | ------------------------------------------------------------------------------------------ | --------------------- | -------------- | ----------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ---------------------- | ------------------------ | --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------- | ----------------------- | ----------------------------- | -------------------------------- | ------------------------ | -------------------------- | ----------------- | -------------------------------- | -------------------------------- | ------------------ | ------------------ | --------------------------- | --------------- | ---------------- | ------------- | ------------------ | ------------ | -------- | ------------- | --------- | ------------------ | ------------------ | -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------------- | -------------------- | -------------------- | ------------------- | ------------------- | ------------------- | -------------------- | ------------------------- | --------------------- | ------------------------- | -------------------------- | ---------------- | --------------- | ------------------------ | -------------------------- | ----------------------------- | ------------------------- | ------------------------------- | -------------------------- | ----------------------- | ----------- | -------------------- | ---------------------------------- | ----------------------------------------------- | ------------------------------------------------ | ----------------------------------------------- | --------------------- |
@@ -33,8 +31,6 @@
     | **39631513** | [https://www.airbnb.com/rooms/39631513](https://www.airbnb.com/rooms/39631513) | 20231225075512 | 2023-12-25 | city scrape | Aparthotel in Athina · 1 bedroom · 3 beds · 1 bath | | Located in the histοrical area of Athens, you have straight access to Monastiraki Metro Station (direct line to the Athens International Airport and Central Piraeus Port). Stroll around the pedestrians earby, which are part of the great shopping district in the capital and get lost among the athenian monuments that stand a breath away from this central hotel. | [https://a0.muscache.com/pictures/miso/Hosting-39631513/original/ac4f0b93-40a3-4744-a9bb-be654dbcf28a.jpeg](https://a0.muscache.com/pictures/miso/Hosting-39631513/original/ac4f0b93-40a3-4744-a9bb-be654dbcf28a.jpeg) | 303652112 | [https://www.airbnb.com/users/show/303652112](https://www.airbnb.com/users/show/303652112) | Enattica | 2019-10-21 | Athens, Greece | Handpicked furniture and urban elegance comes first in mind when talking about The Athens Green Suites. This recent renovated and high tech hotel has just come online to upgrade the hospitality experience in Athens, while introducing the real green way of accommodating thanks to it's enviromental friendly practiques.<br>The Athens Green Suites meet the needs of every single traveler through the variety of it's suite types and the wide array in their amenities' catalogue.<br>Located in the histοrical area of Athens, you have straight access to Monastiraki Metro Station (direct line to the Athens International Airport and Central Piraeus Port). Stroll around the pedestrians earby, which are part of the great shopping district in the capital and get lost among the athenian monuments that stand a breath away from this central hotel. | within an hour | 100% | 100% | f | [https://a0.muscache.com/im/pictures/user/bd49c88f-80af-43bf-9964-3a9310674d91.jpg?aki_policy=profile_small](https://a0.muscache.com/im/pictures/user/bd49c88f-80af-43bf-9964-3a9310674d91.jpg?aki_policy=profile_small) | [https://a0.muscache.com/im/pictures/user/bd49c88f-80af-43bf-9964-3a9310674d91.jpg?aki_policy=profile_x_medium](https://a0.muscache.com/im/pictures/user/bd49c88f-80af-43bf-9964-3a9310674d91.jpg?aki_policy=profile_x_medium) | Plaka | 5 | 5 | ['email', 'phone'] | t | t | Athina, Greece | ΕΜΠΟΡΙΚΟ ΤΡΙΓΩΝΟ-ΠΛΑΚΑ | | 37.97755 | 23.72874 | Room in aparthotel | Entire home/apt | 3 | | 1 bath | | 3 | [] | $172.00 | 1 | 1125 | 1 | 1 | 1125 | 1125 | 1.0 | 1125.0 | | t | 22 | 52 | 79 | 308 | 2023-12-25 | 1 | 1 | 1 | 2023-12-10 | 2023-12-10 | 5.0 | 5.0 | 5.0 | 5.0 | 5.0 | 5.0 | 5.0 | 1152259 | f | 5 | 2 | 3 | 0 | 1 |
     | **665083132669737868** | [https://www.airbnb.com/rooms/665083132669737868](https://www.airbnb.com/rooms/665083132669737868) | 20231225075512 | 2023-12-25 | city scrape | Condo in Athina · 1 bedroom · 1 bed · 1 bath | | | [https://a0.muscache.com/pictures/miso/Hosting-665083132669737868/original/fccbbbb2-0725-4873-a635-3782b78d3e45.jpeg](https://a0.muscache.com/pictures/miso/Hosting-665083132669737868/original/fccbbbb2-0725-4873-a635-3782b78d3e45.jpeg) | 419174410 | [https://www.airbnb.com/users/show/419174410](https://www.airbnb.com/users/show/419174410) | Sylvia | 2021-08-19 | | | N/A | N/A | N/A | f | [https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_small](https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_small) | [https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_x_medium](https://a0.muscache.com/im/pictures/user/0d45709a-15f5-4ad2-9cd8-b00129e9b707.jpg?aki_policy=profile_x_medium) | | 2 | 2 | ['email', 'phone'] | t | t | | ΕΜΠΟΡΙΚΟ ΤΡΙΓΩΝΟ-ΠΛΑΚΑ | | 37.97444 | 23.73195 | Entire condo | Entire home/apt | 2 | | 1 bath | | 1 | [] | $90.00 | 1 | 365 | 1 | 1 | 365 | 365 | 1.0 | 365.0 | | t | 22 | 52 | 75 | 323 | 2023-12-25 | 0 | 0 | 0 | | | | | | | | | | 1658224 | t | 2 | 2 | 0 | 0 | |
     | **24716838** | [https://www.airbnb.com/rooms/24716838](https://www.airbnb.com/rooms/24716838) | 20231225075512 | 2023-12-26 | previous scrape | Rental unit in Athina · ★4.70 · 1 bedroom · 1 bed · 1 bath | | | [https://a0.muscache.com/pictures/54c10409-fb92-4618-8a8f-8558268437b6.jpg](https://a0.muscache.com/pictures/54c10409-fb92-4618-8a8f-8558268437b6.jpg) | 158101640 | [https://www.airbnb.com/users/show/158101640](https://www.airbnb.com/users/show/158101640) | Katerina | 2017-11-09 | Athens, Greece | | N/A | N/A | 0% | f | [https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_small](https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_small) | [https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_x_medium](https://a0.muscache.com/im/pictures/user/21086f84-8f63-4726-8858-cc2a79ab6232.jpg?aki_policy=profile_x_medium) | Ambelokipi | 2 | 2 | ['email', 'phone'] | t | f | | ΑΜΠΕΛΟΚΗΠΟΙ | | 37.99879 | 23.76088 | Entire rental unit | Entire home/apt | 2 | | 1 bath | | 1 | [] | $50.00 | 2 | 40 | 2 | 2 | 40 | 40 | 2.0 | 40.0 | | t | 0 | 0 | 0 | 0 | 2023-12-26 | 40 | 0 | 0 | 2018-08-23 | 2020-02-28 | 4.7 | 4.8 | 4.83 | 4.8 | 4.83 | 4.55 | 4.75 | | f | 1 | 1 | 0 | 0 | 0.61 |
-
-    <details>
 
 
 4. In the original dataset, there are five columns that contain no values of any kind: `description`, `neighbourhood_group_cleansed`, `bathrooms`, `bedrooms`, and `calendar_updated`. Due to the dataset's size, it is necessary to remove these completely empty columns to improve data processing efficiency and readability. To achieve this, I first generate a list of indexes corresponding to the empty columns. Then, when writing the new clean CSV file, I skip these columns using the generated list. All scrubbing tasks are done with Python.
@@ -77,6 +73,7 @@
 ## Analysis:
 
 1. show exactly two documents from the listings collection in any order
+    | Retrieve only 2 documents.
     ```
     db.athens.find().limit(2)
     ```
@@ -231,6 +228,7 @@
 
 
 2. show exactly 10 documents in any order, but "prettyprint" in easier to read format, using the pretty() function.
+    | Retrieve 10 documents, and use pretty() to prettyprint (prettyprinting is by default in this version).
     ```
     db.athens.find().limit(10).pretty()
     ```
@@ -457,6 +455,8 @@
             }
 
 3. choose two hosts (by reffering to their host_id values) who are superhosts (available in the host_is_superhost field), and show all of the listings offered by both of the two hosts
+    | Retrieve documents associated with two superhosts (`272702874` and `220064887`), guaranteed by the two criteria using the `$or` operator
+    | Include only the requested fields (`name`, `price`, `neighbourhood`, `host_name`, and `host_is_superhost`) in the results, enabled by the projection that specifies the fields to be included and explicitly disables the _id field.
     ```
     db.athens.find({$or: [{host_id: 272702874},{host_id: 220064887}]}, { _id: 0, host_id: 1, name: 1, price: 1, neighbourhood: 1, host_name: 1, host_is_superhost: 1 })
     ```
@@ -490,6 +490,7 @@
     Listings by superhosts tend to have exceptionally high review scores, which is the reasons why these hosts are considered as such.
 
 4. find all the unique host_name values
+    | Finds the distinct values for `host_name` across the collection using the `distinct` command.
     ```
     db.athens.distinct("host_name")
     ```
@@ -599,7 +600,13 @@
                 ... 2473 more items
             ]
 
+    **insight**
+    Some names are not human names but rather business names or addresses, indicating that some Airbnb listings are managed by companies or organizations.
+
 5. find all of the places that have more than 2 beds in Athens, Attika, Greece (referred to as the neighborhood field in the data file, as neighbourhood_group_cleansed contains none in this dataset), ordered by review_scores_rating descending
+    | Retrieve documents meeting the two criteria simultaneously, ensuring they have more than 2 beds in Athens, Attika, Greece, using the `$and` operator and the `$gt` operator for the number of beds.
+    | Include only the requested fields (`name`, `beds`, `review_scores_rating`, and `price`) in the results, enabled by the projection that specifies the fields to be included and explicitly disables the `_id` field.
+    | Maintain descending order using the `sort` function, which sorts by the review_scores_rating field.
     ```
     db.athens.find({$and:[{beds: {$gt: 2, }},{neighbourhood: 'Athens, Greece'}]}, { _id: 0, name: 1, beds: 1, review_scores_rating: 1, price: 1 }).sort({ review_scores_rating: -1 })
     ```
@@ -624,7 +631,12 @@
                 review_scores_rating: 5
             }
 
+    **insight**
+    Through the name, one can observe how the ratio between the number of bedrooms and the number of beds significantly influences the price. For example, having 6 beds in a rental unit with only 1 bedroom indicates potentially poorer living conditions compared to 3 beds in a unit with 2 bedrooms.
+
 6. show the number of listings per host
+    | Use the `$group` stage to separate documents into groups based on the `host_id` field.
+    | Then use the `$count` stage to count the documents.
     ```
     db.athens.aggregate({$group: {_id: "$host_id",count: {$count: { } }}})
     ```
@@ -643,10 +655,17 @@
                 count: 1
             }
 
+    **insight**
+    Many hosts can only manage one Airbnb listings, while there are a few who are responsible for more than one, or even ten units. These are highly likely to be managed by companies or organizations.
+
 7. find the average review_scores_rating per neighborhood, and only show those that are 4 or above, sorted in descending order of rating 
+    | Use the `$group` stage to separate documents into groups based on the `host_id` field..
+    | Utilize `$avg` to compute the average rating for each group
+    | Next, use `$match` to filter out all documents in groups that have an average rating below 4.
+    | Finally, use `$sort` to maintain a descending order of average ratings for each group.
     ```
-   db.athens.aggregate([{$group: {_id: "$neighbourhood", avgRating: {$avg: "$review_scores_rating"}}},{$match: {avgRating: {$gte: 4}}},{$sort: {avgRating: -1}}])
-   ```
+    db.athens.aggregate([{$group: {_id: "$neighbourhood", avgRating: {$avg: "$review_scores_rating"}}},{$match: {avgRating: {$gte: 4}}},{$sort: {avgRating: -1}}])
+    ```
    **results**
 
         {
@@ -662,9 +681,5 @@
             avgRating: 5
         }
 
-
-Describe each of the analyses you have performed. For each query, include:
-a description of the query
-the code used to perform it
-up to the first three results in a preformatted text block (feel free to clip the text in fields to prevent line-wrapping)
-describe any insights the analysis shows that may not be obvious to someone just viewing the raw data.
+    **insight**
+    From the average rating and the list sorted in descending order, one can assume that the neighborhoods at the top of the list will be the most recommended places for travelers to stay in.
