@@ -601,7 +601,7 @@
 
 5. find all of the places that have more than 2 beds in Athens, Attika, Greece (referred to as the neighborhood field in the data file, as neighbourhood_group_cleansed contains none in this dataset), ordered by review_scores_rating descending
     ```
-    db.athens.find({$and:[{beds: {$gte: 2, }},{neighbourhood: 'Athens, Greece'}]}, { _id: 0, name: 1, beds: 1, review_scores_rating: 1, price: 1 }).sort({ review_scores_rating: 1 }).limit(3)
+    db.athens.find({$and:[{beds: {$gte: 2, }},{neighbourhood: 'Athens, Greece'},{review_scores_rating: {$gte: 0, }}]}, { _id: 0, name: 1, beds: 1, review_scores_rating: 1, price: 1 }).sort({ review_scores_rating: 1 }).limit(3)
     db.athens.find({$and:[{beds: {$gte: 2, }},{neighbourhood: 'Athina, Greece'}]})
     db.athens.find({neighborhood: "Athina, Greece",})
 db.athens.find( { $and: [ { beds: { $gte: 2 } }, { neighbourhood: 'Athina, Greece' } ] } )
