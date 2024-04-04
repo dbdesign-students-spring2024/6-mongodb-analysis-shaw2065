@@ -80,7 +80,7 @@
     ```
     db.athens.find().limit(2)
     ```
-    **result**
+    **results**
     
             {
                 _id: ObjectId('660e409cb1d5d2f5d39bf58e'),
@@ -234,7 +234,7 @@
     ```
     db.athens.find().limit(10).pretty()
     ```
-    **result**
+    **results**
 
             {
                 _id: ObjectId('660e409cb1d5d2f5d39bf58e'),
@@ -460,7 +460,7 @@
     ```
     db.athens.find({$or: [{host_id: 272702874},{host_id: 220064887}]}, { _id: 0, host_id: 1, name: 1, price: 1, neighbourhood: 1, host_name: 1, host_is_superhost: 1 })
     ```
-    **result**
+    **results**
 
             {
                 name: 'Condo in Athina · ★5.0 · 1 bedroom · 2 beds · 1 bath',
@@ -486,9 +486,9 @@
                 price: '$53.00'
             }
     
-    **result**
+    **insight**
     
-            Listings by superhosts tend to have exceptionally high review scores, which is the reasons why these hosts are considered as such.
+            Listings by superhosts tend to have exceptionally high review scores,<br>which is the reasons why these hosts are considered as such.
 
 4. find all the unique host_name values (see the docs)
 
