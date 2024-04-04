@@ -229,6 +229,7 @@
 
 2. show exactly 10 documents in any order, but "prettyprint" in easier to read format, using the pretty() function.
     - Retrieve 10 documents, and use pretty() to prettyprint (prettyprinting is by default in this version).
+
     ```
     db.athens.find().limit(10).pretty()
     ```
@@ -456,7 +457,8 @@
 
 3. choose two hosts (by reffering to their host_id values) who are superhosts (available in the host_is_superhost field), and show all of the listings offered by both of the two hosts
     - Retrieve documents associated with two superhosts (`272702874` and `220064887`), guaranteed by the two criteria using the `$or` operator
-    - Include only the requested fields (`name`, `price`, `neighbourhood`, `host_name`, and `host_is_superhost`) in the results, enabled by the projection that specifies the fields to be included and explicitly disables the _id field.
+    - Include only the requested fields (`name`, `price`, `neighbourhood`, `host_name`, and `host_is_superhost`) in the results, enabled by the projection that specifies the fields to be included and explicitly disables the `_id` field.
+
     ```
     db.athens.find({$or: [{host_id: 272702874},{host_id: 220064887}]}, { _id: 0, host_id: 1, name: 1, price: 1, neighbourhood: 1, host_name: 1, host_is_superhost: 1 })
     ```
@@ -487,10 +489,12 @@
             }
     
     **insight**
+
     Listings by superhosts tend to have exceptionally high review scores, which is the reasons why these hosts are considered as such.
 
 4. find all the unique host_name values
-    - Finds the distinct values for `host_name` across the collection using the `distinct` command.
+    - Finds the distinct values for `host_name` across the collection using `distinct`.
+
     ```
     db.athens.distinct("host_name")
     ```
@@ -601,12 +605,14 @@
             ]
 
     **insight**
+
     Some names are not human names but rather business names or addresses, indicating that some Airbnb listings are managed by companies or organizations.
 
 5. find all of the places that have more than 2 beds in Athens, Attika, Greece (referred to as the neighborhood field in the data file, as neighbourhood_group_cleansed contains none in this dataset), ordered by review_scores_rating descending
     - Retrieve documents meeting the two criteria simultaneously, ensuring they have more than 2 beds in Athens, Attika, Greece, using the `$and` operator and the `$gt` operator for the number of beds.
     - Include only the requested fields (`name`, `beds`, `review_scores_rating`, and `price`) in the results, enabled by the projection that specifies the fields to be included and explicitly disables the `_id` field.
-    - Maintain descending order using the `sort` function, which sorts by the review_scores_rating field.
+    - Maintain descending order using the `sort` function, which sorts by the `review_scores_rating` field.
+
     ```
     db.athens.find({$and:[{beds: {$gt: 2, }},{neighbourhood: 'Athens, Greece'}]}, { _id: 0, name: 1, beds: 1, review_scores_rating: 1, price: 1 }).sort({ review_scores_rating: -1 })
     ```
@@ -632,11 +638,13 @@
             }
 
     **insight**
+
     Through the name, one can observe how the ratio between the number of bedrooms and the number of beds significantly influences the price. For example, having 6 beds in a rental unit with only 1 bedroom indicates potentially poorer living conditions compared to 3 beds in a unit with 2 bedrooms.
 
 6. show the number of listings per host
     - Use the `$group` stage to separate documents into groups based on the `host_id` field.
     - Then use the `$count` stage to count the documents.
+
     ```
     db.athens.aggregate({$group: {_id: "$host_id",count: {$count: { } }}})
     ```
@@ -656,6 +664,7 @@
             }
 
     **insight**
+
     Many hosts can only manage one Airbnb listings, while there are a few who are responsible for more than one, or even ten units. These are highly likely to be managed by companies or organizations.
 
 7. find the average review_scores_rating per neighborhood, and only show those that are 4 or above, sorted in descending order of rating 
@@ -663,6 +672,7 @@
     - Utilize `$avg` to compute the average rating for each group
     - Next, use `$match` to filter out all documents in groups that have an average rating below 4.
     - Finally, use `$sort` to maintain a descending order of average ratings for each group.
+    
     ```
     db.athens.aggregate([{$group: {_id: "$neighbourhood", avgRating: {$avg: "$review_scores_rating"}}},{$match: {avgRating: {$gte: 4}}},{$sort: {avgRating: -1}}])
     ```
@@ -682,4 +692,5 @@
         }
 
     **insight**
+
     From the average rating and the list sorted in descending order, one can assume that the neighborhoods at the top of the list will be the most recommended places for travelers to stay in.
