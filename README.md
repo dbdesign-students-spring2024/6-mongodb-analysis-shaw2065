@@ -7,7 +7,7 @@
 
 2. The original data file was in the format of CSV.
 
-3. The first 20 rows of raw data from the original data file
+3. Some of the raw data from the original data file
     <details>
     <summary>First 20 rows of raw data</summary>
 
