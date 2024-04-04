@@ -601,20 +601,66 @@
 
 5. find all of the places that have more than 2 beds in Athens, Attika, Greece (referred to as the neighborhood field in the data file, as neighbourhood_group_cleansed contains none in this dataset), ordered by review_scores_rating descending
     ```
-    db.athens.find({$and:[{beds: {$gte: 2, }},{neighbourhood: 'Athens, Greece'},{review_scores_rating: {$gte: 0, }}]}, { _id: 0, name: 1, beds: 1, review_scores_rating: 1, price: 1 }).sort({ review_scores_rating: 1 }).limit(3)
-    db.athens.find({$and:[{beds: {$gte: 2, }},{neighbourhood: 'Athina, Greece'}]})
-    db.athens.find({neighborhood: "Athina, Greece",})
-db.athens.find( { $and: [ { beds: { $gte: 2 } }, { neighbourhood: 'Athina, Greece' } ] } )
-
+    db.athens.find({$and:[{beds: {$gt: 2, }},{neighbourhood: 'Athens, Greece'}]}, { _id: 0, name: 1, beds: 1, review_scores_rating: 1, price: 1 }).sort({ review_scores_rating: -1 })
     ```
     **results**
-only show the name, beds, review_scores_rating, and price
-if you run out of memory for this query, try filtering review_scores_rating that aren't empty ($ne); and lastly, if there's still an issue, you can set the beds to match exactly 2.
+
+            {
+                name: 'Rental unit in Athens · 1 bedroom · 6 beds · 2 shared baths',
+                beds: 6,
+                price: '$12.00',
+                review_scores_rating: 5
+            }
+            {
+                name: 'Rental unit in Athens · ★5.0 · 1 bedroom · 6 beds · 2 shared baths',
+                beds: 6,
+                price: '$12.00',
+                review_scores_rating: 5
+            }
+            {
+                name: 'Rental unit in Athens · ★5.0 · 2 bedrooms · 3 beds · 2 baths',
+                beds: 3,
+                price: '$171.00',
+                review_scores_rating: 5
+            }
 
 6. show the number of listings per host
+    ```
+    db.athens.aggregate({$group: {_id: "$host_id",count: {$count: { } }}})
+    ```
+    **results**
 
-7. find the average review_scores_rating per neighborhood, and only show those that are 4 or above, sorted in descending order of rating (see the docs)
-if your data set only has blanks in the neighborhood-related fields, or only one neighborhood value in all documents, you may pick another field to break down the listings by - include an explanation and justification for this in your report.
+            {
+                _id: 54669323,
+                count: 1
+            }
+            {
+                _id: 464172971,
+                count: 1
+            }
+            {
+                _id: 86859429,
+                count: 1
+            }
+
+7. find the average review_scores_rating per neighborhood, and only show those that are 4 or above, sorted in descending order of rating 
+    ```
+   db.athens.aggregate([{$group: {_id: "$neighbourhood", avgRating: {$avg: "$review_scores_rating"}}},{$match: {avgRating: {$gte: 4}}},{$sort: {avgRating: -1}}])
+   ```
+   **results**
+
+        {
+            _id: 'Athina, England, Greece',
+            avgRating: 5
+        }
+        {
+            _id: 'Athens, Victoria Square, Greece',
+            avgRating: 5
+        }
+        {
+            _id: 'Athina, Kato Patisia, Greece',
+            avgRating: 5
+        }
 
 
 Describe each of the analyses you have performed. For each query, include:
